@@ -8,7 +8,9 @@ ThisBuild / organizationName := "example"
 lazy val root = (project in file("."))
   .settings(
     name := "SparkStreamingLogAnalyzer",
-    libraryDependencies += scalaTest % Test
+    libraryDependencies += scalaTest % Test,
+    test in assembly := {},
+    assemblyJarName in assembly := "SparkStreamingLogAnalyzer.jar"
   )
 
 // publishTo := Some(Resolver.file("file", new File("/Users/al/tmp")))
